@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    ports:
+      - "3305:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: 123456
+
+  #dc-watch-service:
+  #  build:
+  #    context: ../
+  #    dockerfile: build/Dockerfile
+  #  container_name: dc-watch-service
+  #  depends_on:
+  #    - mysql
